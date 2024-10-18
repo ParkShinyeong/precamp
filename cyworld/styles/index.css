@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0px; 
+}
+
+.background {
+    width: 1024px; 
+    height: 600px; 
+    background-image: url("../images/background.png");
+    padding: 20px 0px 0px 20px; 
+}
+
+.outerbox {
+    width: 808px; 
+    height: 544px; 
+    background-image: url("../images/outerbox.png");
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 32px 0 0 32px; 
+}
+
+.wrapper__left {
+    display: flex; 
+    flex-direction: column;
+    width: 208px; 
+    height: 472px;
+
+}
+
+.wrapper__left__header {
+    width: 100%; 
+    height: 30px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.today {
+    font-size: 9px; 
+}
+
+.wrapper__left__body {
+    padding: 20px 30px; 
+    width: 100%; 
+    height: 100%; 
+    border: 1px solid gray; 
+    border-radius: 15px; 
+    background-color: white;
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left__body__header {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column;
+}
+.left__body__header__gray {
+    width: 148px; 
+    height: 133px; 
+    background-color: #C4C4C4;
+
+}
+
+.left__body__header__line {
+    border-top: 1px dotted black; 
+    margin: 12px 0px; 
+
+}
+
+.left__body__profile {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+} 
+
+.left__body__profile__info {
+    margin-bottom: 10px;
+    font-size: 9px; 
+}
+
+.left__body__profile__info span {
+    color: #999999; 
+    font-size: 9px; 
+    padding-left: 8px; 
+}
+
+
+.left__body__footer {
+    margin-top: 119px;
+    display: flex;
+    flex-direction: column; 
+    font-size: 11px; 
+    align-items: flex-start;
+
+}
+.left__body__footer__select {
+    position: relative;
+    display: inline-block; 
+}
+
+.left__body__footer__select select {
+    /*기본 select 디자인 제거*/
+    /*-webkit-appearance: none; /* safari and chrome*/
+    /*-moz-appearance: none; /*firefox*/
+    /* appearance: none; */
+    margin-top: 9px; 
+    width: 140px; 
+    height: 18px; 
+    font-size: 11px;
+}
+
+
+/* 
+.left__body__footer__select::after { 
+    content: ''; 
+    display: block; 
+    width: 18px; 
+    height: 18px; 
+    position: absolute; 
+    top: 9px; 
+    left: 131px; 
+    background-color: #EEEEEE;
+}
+
+.left__body__footer__select::after {
+    content: "▼";
+    position: absolute; 
+    right: 4px; 
+    top: 50%; 
+    transform: translate(-50%); 
+} */
+
+
+.wrapper__right {
+    width: 524px; 
+    height: 472px; 
+    background-color: tomato;
+}
