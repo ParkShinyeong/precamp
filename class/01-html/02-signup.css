@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR";
+}
+
+#signUp {
+    border: 1px solid #AACDFF; 
+    width: 670px; 
+    height: 960px; 
+    margin: 60px 625px; 
+    padding: 72px 100px 70px 100px; 
+    border-radius: 20px;
+    box-shadow: 7px 7px 39px 0px #0068FF40;
+}
+
+#title {
+    margin: 0 0 60px 0; 
+}
+#title h2 {
+    color: #0068FF; 
+    font-weight: 700;
+    font-size: 32px;
+    padding: 0px; 
+    margin: 0px; 
+}
+
+.inputMemberInfo {
+    display: flex; 
+    flex-direction: column;
+    width: 466px; 
+    height: 80px; 
+    margin: 21px 0 0 0; 
+}
+
+.inputMemberInfo label {
+    color: #797979; 
+    font-size: 16px; 
+}
+
+.inputMemberInfo input {
+    height: 56.25px; 
+    border-style: none; 
+    border-bottom: 1px solid #CFCFCF; 
+}
+
+#genderInfo {
+    margin: 50px 0; 
+    display: flex; 
+    justify-content: center;
+}
+
+#genderInfo span{
+    margin: 0 30px 0 0; 
+
+}
+
+.genderRadio {
+    width: 20px; 
+    height: 20px; 
+    background-color: #D2D2D2;
+    font-size:16px; 
+    font-weight: 400 ;
+}
+
+
+#consentCheckBox {
+    font-size: 14px; 
+    padding: 0 4px 30px 12px;
+    border-bottom: 1px solid #E6E6E6; 
+}
+ button {
+    margin-top: 30px; 
+    padding: 24px 200px; 
+    width: 470px; 
+    height: 75px;
+    border: 1px solid #0068FF; 
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 18px; 
+    color: #0068FF; 
+}

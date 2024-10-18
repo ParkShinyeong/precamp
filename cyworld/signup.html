@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form action="">
+        <label for="email">이메일 </label> 
+        <input id="email" type="text" placeholder="이메일을 입력해주세요"> <br><br>
+    
+        <label for="name">성함 </label> 
+        <input id="name" type="text" placeholder="이름을 입력해주세요"><br><br>
+    
+        <label for="birthday">생년월일 </label> 
+        <input id="birthday" type="date" max="2005-12-31" min="1900-01-01"><br><br>
+    
+        <label for="password">비밀번호 </label> 
+        <input id="password" type="password" placeholder="비밀번호를 입력해주세요"><br><br>
+    
+        <label for="rewritePassword">비밀번호 재입력 </label> 
+        <input id="rewritePassword" type="password" placeholder="비밀번호를 다시 입력해주세요"><br><br>
+    
+    
+        <select name="country" required>
+            <option disabled="true" selected="true">지역을 선택하세요</option>
+            <!-- disabled - 옵션 비활성화 -->
+             <!-- selected - 화면이 로드될 때 미리 선택되어야 함 -->
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+        </select> <br><br>
+    
+        <input type="radio" name="gender" id="female">  
+        <label for="female">여자</label>
+        <input type="radio" name="gender" id="male">
+        <label for="male">남자</label>
+    
+        <br><br>
+        <input type="checkbox" id="condition"> 
+        <label for="condition">이용약관 개인 정보 수집 및 어쩌구에 동의합니다. </label>
+    
+        <hr>
+        
+        <button>가입하기</button>
+        <!-- <input type="submit" value="가입하기"> -->
+    </form>
+
+</body>
+</html>

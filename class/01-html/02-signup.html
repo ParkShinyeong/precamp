@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="02-signup.css">
+</head>
+<body>
+    <div id="signUp">
+        <div id="title">
+            <h2>회원 가입을 위해</h2>
+            <h2>정보를 입력해주세요</h2>
+        </div> <!-- title div 종료태그  -->
+        <div id="inputInfo">
+            <div class="inputMemberInfo">
+                <label for="email">* 이메일</label>
+                <input id="email" type="text" >
+            </div>
+            <div class="inputMemberInfo">
+                <label for="name">* 이름</label>
+                <input id="name" type="text" >
+            </div>
+            <div class="inputMemberInfo">
+                <label for="password">* 비밀번호</label>
+                <input  id="password" type="password">
+            </div>
+            <div class="inputMemberInfo">
+                <label for="rewritePassword">* 비밀번호 확인</label>
+                <input id="rewritePassword" type="password">
+            </div>
+        </div>  <!-- inputInfo 종료 태그  -->
+        <div id="genderInfo">
+            <input class="genderRadio" type="radio" name="gender"><span>여성</span>
+            <input class="genderRadio" type="radio" name="gender"><span>남성</span>
+        </div> <!-- genderInfo 종료 태그  -->
+        <div id="consentCheckBox">
+            <input type="checkbox"> 이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.
+        </div> <!-- consentCheckBox 종료 태그  -->
+        <button id="signUpButton"><span>가입하기</span></button>
+        <!-- 예전에는 이렇게도 사용함 -->
+        <!-- <input type="button" value="가입하기">  -->
+
+
+        <!-- <select name="" id="">
+            <option disabled="true" selected="true">지역을 선택하세요</option>
+            <option>서울</option>
+            <option>경기</option>                
+            <option>인천</option>
+        </select> -->
+        
+    </div> <!-- signUp 종료 태그 -->
+ 
+</body>
+</html>
