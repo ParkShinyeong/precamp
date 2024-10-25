@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0px; 
+    padding: 0px; 
+    font-family: malgungothic;
+}
+
+html, body {
+    width: 100%; 
+    height: 100%; 
+}
+
+@font-face {
+    font-family: "scifibit";
+    src: url("../txt/scifibit.ttf") format('truetype'); 
+}
+
+@font-face {
+    font-family: "malgungothic";
+    src: url("../txt/malgun_boot.ttf") format('truetype'); 
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper__header {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+}
+
+.header__title {
+    /* height: 17px;  */
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title {
+    margin-right: 6px; 
+    font-size: 13px; 
+    font-weight: 700; 
+    color: #55B2D4; 
+}
+
+.subtitle {
+    font-size: 8px; 
+    font-weight: 400; 
+    color: #000000; 
+}
+
+.line {
+    width: 100%; 
+    border: 1px solid #999999; 
+}
+
+.game__container {
+    width: 222px;
+    height: 168px; 
+    border: 1px solid #999999; 
+    border-radius: 10px;
+    background-color: #F6F6F6;
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game__title {
+    font-size: 11px; 
+    font-weight: 700; 
+    /* margin: 8px 0;  */
+}
+
+.game__subtitle {
+    font-size: 10px; 
+    font-weight: 700;
+    color: #999999; 
+    /* margin-bottom: 12px; */
+}
+
+.word__text {
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+.textbox {
+    width: 130px; 
+    height: 24px; 
+    border-radius: 5px; 
+    font-size: 11px; 
+    margin-right: 8px; 
+    background-color: #FFFFFF;
+}
+
+.search {
+    width: 38px; 
+    height: 100%; 
+    border-radius: 5px; 
+    font-size: 11px; 
+    font-weight: 700; 
+    color: #000000; 
+    background-color: #FFFFFF;
+}
+
+.word_result {
+    font-size: 11px; 
+    font-weight: 700; 
+    color: #999999; 
+    margin-top: 11px; 
+}
+
+.lotto__numbers {
+    width: 130px; 
+    height: 21px; 
+    border: 1px solid black; 
+    background-color: #FFE400;
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lotto__number {
+    font-size: 10px; 
+    font-weight: 700; 
+}
+
+.lotto__button {
+    width: 62px; 
+    height: 24px; 
+    border: 1px solid #000000; 
+    border-radius: 5px; 
+    background-color: #ffffff;
+    font-size: 11px; 
+    font-weight: 700; 
+}
