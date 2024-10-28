@@ -132,11 +132,11 @@ html, body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
-
-.lotto__number {
+    padding: 5px 8px; 
+    margin-top: 10px; 
+    margin-bottom: 11px;
     font-size: 10px; 
-    font-weight: 700; 
+    font-weight: 700;  
 }
 
 .lotto__button {
