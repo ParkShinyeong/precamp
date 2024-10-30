@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
     margin: 0px;
+    padding: 0px; 
     font-family: 'malgungothic'; 
+}
+
+@font-face {
+    font-family: "PFstartdust";
+    src: url("../txt/PFstardust\ 3.0.ttf") format('truetype'); 
 }
 
 @font-face {
@@ -175,4 +181,31 @@ iframe {
     width: 100%; 
     height: 100%; 
     border: none; 
+}
+
+.navigation {
+    width: 60px; 
+    height: 100%; 
+    margin-top: 44px; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.navigation__item {
+    width: 60px; 
+    height: 30px;
+    margin-bottom: 8px; 
+    background-color: #298EB5;
+    border: 1px solid #0F465E; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'PFstartdust';
+    font-size: 12px; 
+    font-weight: 500; 
+    color: #FFFFFF; 
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
 }
