@@ -209,3 +209,8 @@ iframe {
     justify-content: center;
     cursor: pointer; 
 }
+
+#menu__home {
+    color: black;
+     background-color: white
+}
