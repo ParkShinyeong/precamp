@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+     <div class="wrapper">
+        <div class="title">코드캠프 회원가입</div>
+        <div class="user__information">
+            <input class="user__info" id="user__email" type="text" placeholder="이메일을 입력해 주세요.">
+            <div class="error__message" id="email__error">이메일이 올바르지 않습니다.</div>
+            <input class="user__info" id="user__name" type="text" placeholder="이름을 입력해 주세요.">
+            <div class="error__message" id="name__error">이름이 올바르지 않습니다.</div>
+            <input class="user__info" id="user__password" type="password" placeholder="비밀번호를 입력해 주세요.">
+            <div class="error__message" id="password__error">비밀번호가 올바르지 않습니다.</div>
+            <input class="user__info" id="user__repassword" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+            <div class="error__message" id="repassword__error">비밀번호가 일치하지 않습니다.</div>
+        </div>
+        <div class="phone">
+            <input type="text" id="p1" class="phone__number" maxlength="3">
+            <div class="phone__divided__line"></div>
+            <input type="text" id="p2" class="phone__number" maxlength="4">
+            <div class="phone__divided__line"></div>
+            <input type="text" id="p3" class="phone__number" maxlength="4">
+        </div>
+        <div class="authentication">
+            <div class="send__authentication">
+                <span class="authentication__number">000000</span>
+                <button class=authentication__number__btn disabled>인증번호 전송</button>
+            </div>
+            <div class="timer">
+                <div class="error__message" id="authentication__error">인증을 완료해주세요.</div>
+                <div class="time">
+                    <span class="minute">0</span> :
+                    <span class="second">00</span>
+                </div>
+                <button class="submit__authentication__btn" disabled>인증 완료</button>
+            </div>
+        </div>
+        <select id="region">
+            <option value="default" selected="true" disabled="true">지역을 선택하세요.</option>
+            <option value="Seoul">서울</option>
+            <option value="Gyeonggi">경기</option>
+            <option value="Incheon">인천</option>
+        </select>
+        <div class="error__message" id="region__error">지역을 선택해주세요.</div>
+        <div class="gender">
+            <input type="radio" name="gender" class="gender__radio">
+            <span class="select__gender">여성</span>
+            <input type="radio" name="gender" class="gender__radio">
+            <span class="select__gender">남성</span>
+        </div>
+        <div class="error__message" id="gender__error">성별을 선택해주세요.</div>
+        <div class="divided__line"></div>
+        <button class="signup__btn">가입하기</button>
+     </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
