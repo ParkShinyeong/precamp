@@ -1,4 +1,3 @@
-
 const phone1 = document.getElementById("p1"); 
 const phone2 = document.getElementById("p2"); 
 const phone3 = document.getElementById("p3"); 
@@ -10,10 +9,6 @@ const signUpBtn = document.querySelector(".signup__btn");
 const minute = document.querySelector(".minute"); 
 const second = document.querySelector(".second"); 
 
-let isStarted = false; 
-let isCompleteAuthentic = false; 
-let time = 180; 
-let timer; 
 
 // 휴대전화 앞 칸이 모두 채워지면 다음 칸으로 커서 이동
 const moveFocus = (prev, next, length) => {
@@ -33,7 +28,7 @@ const activateAuthenticBtn = () => {
 
     if(length1 === 3 && length2 === 4 && length3 === 4 && !isStarted) {
         authenticBtn.removeAttribute("disabled"); 
-        authenticBtn.style.color = "#0068FF"
+        authenticBtn.style.cssText = "color: #0068FF ;  cursor: pointer"
     }
 }
 
@@ -41,32 +36,42 @@ const activateAuthenticBtn = () => {
     phone.addEventListener("input", () => activateAuthenticBtn()); 
 })
 
-
 // 인증 번호 전송 버튼을 누르면 토큰이 전달되고 타이머가 시작된다. 
+let isStarted = false; 
+let timer; 
+
 authenticBtn.addEventListener("click", () => {
     if(!isStarted) {
         isStarted = true; 
         // 인증 완료 버튼 활성화 
         submitAuthenticBtn.removeAttribute("disabled"); 
-        submitAuthenticBtn.style.cssText = "color: white; background-color: #0068FF;"
+        submitAuthenticBtn.style.cssText = "color: white; background-color: #0068FF; cursor: pointer"
         
         // 버튼을 누르면 토큰 생성 후 화면에 보여준다. 
         const token = String(Math.floor(Math.random()*999999)).padStart(6, "0"); 
         authenticNumber.innerText = token; 
         // 3분 타이머 동작 (0:00 형식 유지)
-        timer = setInterval(() => {
-            if(time >= 0) {
-                minute.innerText = Math.floor(time / 60); 
-                second.innerText = String(time % 60).padStart(2, "0"); 
-                time--; 
-            } else {
-                clearInterval(timer); 
-                isStarted = false; 
-                resetTimer(); 
-            }
-        }, 1000)
+        getTokenTimer();
     }
 })
+
+submitAuthenticBtn.addEventListener("click", () => finishAuthentic(timer));
+
+const getTokenTimer = () => {
+    let time = 180; 
+    timer = setInterval(() => {
+        if(time >= 0) {
+            minute.innerText = Math.floor(time / 60); 
+            second.innerText = String(time % 60).padStart(2, "0"); 
+            time--; 
+        } else {
+            clearInterval(timer); 
+            isStarted = false; 
+            resetTimer(); 
+        }
+    }, 1000)
+    
+}
 
 const disabledBtn = (btn) => {
     btn.style.cssText = "color: #d2d2d2;border: 1px solid #d2d2d2";
@@ -77,23 +82,22 @@ const disabledBtn = (btn) => {
 const finishAuthentic = (interval) => {
     clearInterval(interval); 
     window.alert("인증이 완료되었습니다.")
-    resetTimer(); 
     disabledBtn(authenticBtn)
-    isCompleteAuthentic = true; 
+    
+    // 가입하기 버튼 활성화 
+    signUpBtn.style.cssText = "color: #0068FF ; border: 1px solid #0068FF; cursor: pointer"
+    signUpBtn.removeAttribute("disabled")
 }
-submitAuthenticBtn.addEventListener("click", () => finishAuthentic(timer));
 
-// 3분이 지나면 / 인증 버튼을 누르면 토큰 정보, 타이머, 버튼 초기화
+
+// 토큰 정보, 타이머, 버튼 초기화
 const resetTimer = () => {
     disabledBtn(submitAuthenticBtn);
     authenticNumber.innerText = "000000"; 
-    minute.innerText = "0"; 
+    minute.innerText = "3"; 
     second.innerText = "00";
     time = 180; 
 }
-
-
-// 가입하기 버튼을 누르면 각 입력칸 검증. 빈 칸 아래에 경고를 띄운다. \
 
 
 const checkEmail = () => {
@@ -116,80 +120,58 @@ const checkPassword = () => {
 }
 const checkRepassword = () => {
     const password = document.querySelector("#user__password").value; 
-    const repassword = document.querySelector("#user__repassword").value; 
-    return password === repassword; 
-}
-
-const checkRegion = () => { 
-    const region = document.querySelector("#region");   
-    return region.value !== "default"
-}
-
-const checkGender = () => {
-    const genderRadio = document.querySelectorAll(".gender__radio"); 
-    return Array.from(genderRadio).some(radio => radio.checked); 
-}
-
-// 에러 메세지 활성화 / 비활성화
-const activateErrorMessage = (id) => {
-    document.getElementById(id).className = "error__message__activate"  
-}
-
-const disableErrorMessage = (id) => {
-    document.getElementById(id).className ="error__message"
+    const repassword = document.querySelector("#user__repassword").value;  
+    return repassword !== "" && password === repassword; 
 }
 
 const userInputs = [
-    {
-        input: document.querySelector("#user__email"), 
+    { 
         errorId: "email__error", 
+        errorMessage: "이메일이 올바르지 않습니다.", 
         checking: checkEmail
     }, {
-        input: document.querySelector("#user__name"), 
         errorId: "name__error",
+        errorMessage: "이름이 올바르지 않습니다.", 
         checking: checkName
     }, {
-        input: document.querySelector("#user__password") , 
         errorId: "password__error",
+        errorMessage: "비밀번호가 올바르지 않습니다.", 
         checking: checkPassword
     }, {
-        input: document.querySelector("#user__repassword") , 
-        errorId: "user__repassword",
+        errorId: "repassword__error",
+        errorMessage: "비밀번호가 일치하지 않습니다.", 
         checking: checkRepassword
-    }
-]; 
+    }, {
+        errorId: "region__error",
+        errorMessage: "지역을 선택해주세요.", 
+        checking: () => document.querySelector("#region").value !== "default"
 
-userInputs.forEach((user) => {
-    user.input.addEventListener("change", () => {
+    }, {
+        errorId: "gender__error",
+        errorMessage: "성별을 선택해주세요.", 
+        checking: () => {
+            const genderRadio = document.querySelectorAll(".gender__radio"); 
+            return Array.from(genderRadio).some(radio => radio.checked); 
+        }
+    }
+]
+
+
+
+// 이메일, 이름, 비밀번호, 비밀번호 재확인, 지역, 성별 선택은 가입하기 버튼 클릭 시 유효성 체크
+signUpBtn.addEventListener("click", () => {
+    let isValid = true; 
+    userInputs.forEach((user) => {
         if(!user.checking()) {
-            activateErrorMessage(user.errorId); 
+            document.getElementById(user.errorId).innerText = user.errorMessage; 
+            isValid = false;
         } else {
-            disableErrorMessage(user.errorId); 
+            document.getElementById(user.errorId).innerText = ""; 
         }
     })
-})
 
-signUpBtn.addEventListener("click", () => {
-    const completeInput = checkEmail() && checkName() && checkGender() && checkPassword() && checkRegion() && checkRepassword() && isCompleteAuthentic;
-    if(completeInput) {
+    if(isValid) {
         window.alert("가입이 완료되었습니다.")
-    } else {
-        if(!checkRegion()) {
-            activateErrorMessage("region__error")
-        } else {
-            disableErrorMessage("region__error")
-        } 
-        if(!checkGender()) {
-            activateErrorMessage("gender__error")
-        } else {
-            disableErrorMessage("gender__error")
-        }
-        if(!isCompleteAuthentic) {
-            activateErrorMessage("authentication__error")
-        } else {
-            disableErrorMessage("authentication__error")
-        }
     }
 })
-
 

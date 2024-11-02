@@ -14,18 +14,16 @@ html, body {
     align-items: center;
 }
 
-button {
+/* button {
     margin: 0px; 
     padding: 0px; 
     border: none; 
     cursor: pointer; 
-}
+} */
 
 .wrapper {
     width: 540px; 
-    /* height: 960px; 
-    height: 100%;  */
-    padding: 0 80px; 
+    padding: 60px 80px; 
     border: 1px solid #AACDFF;
     box-shadow: 7px 7px 39px 0px #0068FF40; 
     border-radius: 20px;
@@ -36,11 +34,11 @@ button {
     justify-content: flex-start;
 }
 
-.title {
+h1 {
     color: #0068FF; 
     font-size: 32px; 
     font-weight: 700; 
-    margin: 60px 0 40px 0; 
+    margin-bottom: 40px; 
 }
 
 .user__information {
@@ -52,15 +50,21 @@ button {
 .user__info {
     width: 380px; 
     height: 60px; 
+    background-color: white;
     border-radius: 7px;
     border: 1px solid #D2D2D2; 
-    padding: 18px 0 18px 14px;
+    padding: 18px;
     margin-top: 20px; 
 }
 
+.user__info::placeholder {
+    color: #797979; 
+    font-size: 16px;
+}
 
-.phone {
+.phone__wrapper {
     width: 100%; 
+    height: 40px; 
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
@@ -72,7 +76,9 @@ button {
     width: 100px; 
     height: 40px; 
     border-radius: 7px;
-    border: 1px solid #d2d2d2; 
+    border: 1px solid #D2D2D2; 
+    font-size: 16px; 
+    text-align: center; 
 }
 
 .phone__divided__line {
@@ -90,6 +96,7 @@ button {
 
 .send__authentication {
     width: 100%; 
+    height: 40px;
     display: flex; 
     flex-direction: row; 
     justify-content: flex-end;
@@ -99,27 +106,11 @@ button {
 .authentication__number, .time {
     color: #0068FF; 
     font-size: 18px; 
-    font-weight: 400; 
     margin-right: 21px; 
 }
 
-.time  {
-    width: 80px; 
-}
-
-.authentication__number__btn {
-    border: 1px solid #d2d2d2; 
-    border-radius: 7px; 
-    width: 120px;
-    height: 40px; 
-    text-align: center; 
-    font-size: 16px; 
-    font-weight: 400; 
-    color: #d2d2d2; 
-    background-color: white;
-}
-
 .timer {
+    width: 100%; 
     display: flex; 
     flex-direction: row;
     align-items: center;
@@ -127,37 +118,57 @@ button {
     margin: 20px 0; 
 }
 
-.submit__authentication__btn {
+.time  {
+    text-align: right; 
+    width: 80px; 
+}
+.authentication__number__btn , .submit__authentication__btn  {
+    border: 1px solid #d2d2d2; 
     border-radius: 7px; 
     width: 120px;
     height: 40px; 
     text-align: center; 
     font-size: 16px; 
     font-weight: 400; 
+    color: #D2D2D2; 
     background-color: white;
-    color: #d2d2d2; 
-    border: 1px solid #d2d2d2; 
 }
 
+
 #region {
-    width: 100%; 
+    width: 380px; 
     height: 60px; 
     padding: 18px 15px; 
     background-color: white;
-    border: 1px solid #d2d2d2; 
+    border: 1px solid #D2D2D2; 
     border-radius: 7px;
     color: #797979; 
     font-size: 16px; 
 }
 
-.gender {
+.gender__wrapper {
     width: 100%; 
-    margin-top: 30px;
+    height: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; 
+}
+
+.gender {
     display: flex;
     flex-direction: row;
     justify-content: center; 
     align-items: center;
+    font-size: 16px; 
+    color: black; 
 }
+
+.gender :nth-child(2) {
+    margin-right: 30px; 
+}
+
 
 .gender__radio {
     width: 20px; 
@@ -165,46 +176,30 @@ button {
     margin-right: 5px; 
 }      
 
-.select__gender {
-    color: black; 
-    font-size: 16px; 
-    font-weight: 400; 
-}
-
-.gender :nth-child(2) {
-    margin-right: 30px; 
-}
-
-.divided__line {
+hr {
     width: 100%; 
-    border-top: 1px solid #E6E6E6; 
+    border: 1px solid #E6E6E6; 
     margin: 30px 0; 
 }
 
+
 .signup__btn {
-    width: 100%; 
+    width: 380px; 
     height: 75px; 
-    padding: 24px 126px; 
-    border-radius: 10px;
-    color: #0068FF; 
-    border: 1px solid #0068FF; 
+    margin-bottom: 30px; 
     background-color: white;
-    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #D2D2D2; 
+    color: #D2D2D2; 
     font-size: 18px; 
     font-weight: 400; 
-    margin-bottom: 30px; 
 }
 
 .error__message {
-    display: none; 
-}
-
-.error__message__activate {
-    width: 100%; 
     display: flex; 
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     color: red; 
-    font-size: 12px; 
+    font-size: 12px;
 }
